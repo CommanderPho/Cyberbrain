@@ -86,7 +86,7 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: '12'
-      - name: Install Python dependencies
+      - name: Install Python dependencie
         run: pdm install -v
       - name: Install Node.js dependencies
         run: npm install
