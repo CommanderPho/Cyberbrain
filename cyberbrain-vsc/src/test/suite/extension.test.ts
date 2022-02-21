@@ -10,11 +10,15 @@ let cl = console.log;
 const cbRoot = path.resolve(__dirname, "../../../..");
 
 // We have to identify the actual interpreter being used to correctly load local libs.
-const interpreterPath: string = spawnSync("pdm", ["info"], {
+const interpreterPath2: string = spawnSync("pdm", ["info"], {
   cwd: cbRoot
 })
   .stdout.toString()
-  .match(/(?<=Python Interpreter: )\S+/)![0];
+
+cl(interpreterPath2);
+const interpreterPath3: RegExpMatchArray =interpreterPath2.match(/(?<=Python Interpreter: )\S+/)!;
+cl(interpreterPath3);
+const interpreterPath: string = interpreterPath3[0];
 
 cl("Python interpreter path: " + interpreterPath);
 
