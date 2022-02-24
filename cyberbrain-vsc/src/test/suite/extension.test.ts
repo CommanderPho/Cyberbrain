@@ -12,6 +12,9 @@ cl(cbRoot);
 
 // We have to identify the actual interpreter being used to correctly load local libs.
 const childProcess = spawnSync("pdm", ["info"])
+cl(spawnSync("npm", ["version"]).stdout.toString());
+cl(spawnSync("npm", ["-h"]).stdout.toString());
+cl(spawnSync("pdm", ["-h"]).stdout.toString());
 
 const interpreterPath = childProcess
   .stdout.toString()
