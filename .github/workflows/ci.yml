@@ -91,6 +91,8 @@ jobs:
       - name: Install Node.js dependencies
         run: npm install
         working-directory: cyberbrain-vsc
+      - name: Test
+        run: pdm info
       - name: VSCode Integration tests on Linux
         run: xvfb-run -a npm test
         if: runner.os == 'Linux'
