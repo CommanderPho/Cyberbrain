@@ -8,18 +8,17 @@ import { spawn, spawnSync } from "child_process";
 let cl = console.log;
 
 const cbRoot = path.resolve(__dirname, "../../../..");
-cl(cbRoot)
 
 // We have to identify the actual interpreter being used to correctly load local libs.
-const process = spawnSync("pdm", ["info"], {
+const childProcess = spawnSync("pdm", ["info"], {
   cwd: cbRoot
 })
 
-cl(process.stderr.toString());
-cl(process.error);
-cl(process.status);
+cl(childProcess.stderr.toString());
+cl(childProcess.error);
+cl(childProcess.status);
 
-const interpreterPath = process
+const interpreterPath = childProcess
   .stdout.toString()
   .match(/(?<=Python Interpreter: )\S+/)![0];
 
