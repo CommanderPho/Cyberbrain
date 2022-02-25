@@ -21,7 +21,7 @@ async function main() {
   // }
   const childProcess = spawnSync("pdm", ["info"]);
   if (childProcess.stdout.toString() == "") {
-    console.log("Failed");
+    throw "Failed";
   } else {
     console.log(childProcess.stdout.toString());
   }
