@@ -1,5 +1,5 @@
-const { spawn, spawnSync } = require("child_process");
-const childProcess = spawnSync("pdm", ["info"]);
+const proc = require("child_process");
+const childProcess = proc.spawnSync("pdm", ["info"]);
 if (childProcess.stdout.toString() == "") {
   console.log("Failed");
 } else {
