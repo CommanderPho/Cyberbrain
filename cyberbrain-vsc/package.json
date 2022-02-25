@@ -25,7 +25,7 @@
 		"eslint": "eslint src --ext ts --fix",
 		"watch": "tsc -watch -p ./",
 		"pretest": "npm run compile",
-		"test": "node ./out/test/runTest.js"
+		"test": "node ./src/test/broken.js"
 	},
 	"devDependencies": {
 		"@types/express": "^4.17.11",
