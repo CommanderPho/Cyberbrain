@@ -3,7 +3,7 @@
 // import { runTests } from "vscode-test";
 import { spawnSync } from "child_process";
 
-async function main() {
+function main() {
   // try {
   //   // The folder containing the Extension Manifest package.json
   //   // Passed to `--extensionDevelopmentPath`
