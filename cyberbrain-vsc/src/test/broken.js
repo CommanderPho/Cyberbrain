@@ -1,3 +1,4 @@
+Object.defineProperty(exports, "__esModule", { value: true });
 const proc = require("child_process");
 const childProcess = proc.spawnSync("pdm", ["info"]);
 if (childProcess.stdout.toString() == "") {
